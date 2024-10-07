@@ -41,6 +41,9 @@ Partial Class Form1
         btnGuardarMySQL = New Button()
         btnBuscar = New Button()
         cmbComuna = New ComboBox()
+        btnEliminar = New Button()
+        btnActualizar = New Button()
+        btnVerDatos = New Button()
         Panel1.SuspendLayout()
         SuspendLayout()
         ' 
@@ -148,7 +151,7 @@ Partial Class Form1
         ' lbComuna
         ' 
         lbComuna.AutoSize = True
-        lbComuna.Location = New Point(43, 366)
+        lbComuna.Location = New Point(43, 336)
         lbComuna.Name = "lbComuna"
         lbComuna.Size = New Size(64, 20)
         lbComuna.TabIndex = 16
@@ -157,7 +160,7 @@ Partial Class Form1
         ' lbCiudad
         ' 
         lbCiudad.AutoSize = True
-        lbCiudad.Location = New Point(43, 418)
+        lbCiudad.Location = New Point(43, 381)
         lbCiudad.Name = "lbCiudad"
         lbCiudad.Size = New Size(56, 20)
         lbCiudad.TabIndex = 17
@@ -166,7 +169,7 @@ Partial Class Form1
         ' lbObservacion
         ' 
         lbObservacion.AutoSize = True
-        lbObservacion.Location = New Point(43, 467)
+        lbObservacion.Location = New Point(43, 420)
         lbObservacion.Name = "lbObservacion"
         lbObservacion.Size = New Size(91, 20)
         lbObservacion.TabIndex = 18
@@ -174,23 +177,23 @@ Partial Class Form1
         ' 
         ' tbxCiudad
         ' 
-        tbxCiudad.Location = New Point(159, 418)
+        tbxCiudad.Location = New Point(159, 378)
         tbxCiudad.Name = "tbxCiudad"
         tbxCiudad.Size = New Size(342, 27)
         tbxCiudad.TabIndex = 20
         ' 
         ' tbxObservacion
         ' 
-        tbxObservacion.Location = New Point(159, 467)
+        tbxObservacion.Location = New Point(159, 420)
         tbxObservacion.Name = "tbxObservacion"
         tbxObservacion.Size = New Size(342, 27)
         tbxObservacion.TabIndex = 21
         ' 
         ' btnGuardarMySQL
         ' 
-        btnGuardarMySQL.Location = New Point(186, 524)
+        btnGuardarMySQL.Location = New Point(93, 470)
         btnGuardarMySQL.Name = "btnGuardarMySQL"
-        btnGuardarMySQL.Size = New Size(153, 56)
+        btnGuardarMySQL.Size = New Size(137, 49)
         btnGuardarMySQL.TabIndex = 22
         btnGuardarMySQL.Text = "Guardar My SQL"
         btnGuardarMySQL.UseVisualStyleBackColor = True
@@ -207,16 +210,46 @@ Partial Class Form1
         ' cmbComuna
         ' 
         cmbComuna.FormattingEnabled = True
-        cmbComuna.Location = New Point(159, 366)
+        cmbComuna.Location = New Point(159, 336)
         cmbComuna.Name = "cmbComuna"
         cmbComuna.Size = New Size(342, 28)
         cmbComuna.TabIndex = 24
+        ' 
+        ' btnEliminar
+        ' 
+        btnEliminar.Location = New Point(107, 545)
+        btnEliminar.Name = "btnEliminar"
+        btnEliminar.Size = New Size(136, 49)
+        btnEliminar.TabIndex = 25
+        btnEliminar.Text = "Eliminiar"
+        btnEliminar.UseVisualStyleBackColor = True
+        ' 
+        ' btnActualizar
+        ' 
+        btnActualizar.Location = New Point(348, 470)
+        btnActualizar.Name = "btnActualizar"
+        btnActualizar.Size = New Size(153, 49)
+        btnActualizar.TabIndex = 26
+        btnActualizar.Text = "Actualizar"
+        btnActualizar.UseVisualStyleBackColor = True
+        ' 
+        ' btnVerDatos
+        ' 
+        btnVerDatos.Location = New Point(348, 545)
+        btnVerDatos.Name = "btnVerDatos"
+        btnVerDatos.Size = New Size(153, 49)
+        btnVerDatos.TabIndex = 27
+        btnVerDatos.Text = "Ver datos BD"
+        btnVerDatos.UseVisualStyleBackColor = True
         ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(8.0F, 20.0F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(585, 606)
+        Controls.Add(btnVerDatos)
+        Controls.Add(btnActualizar)
+        Controls.Add(btnEliminar)
         Controls.Add(cmbComuna)
         Controls.Add(btnBuscar)
         Controls.Add(btnGuardarMySQL)
@@ -259,5 +292,8 @@ Partial Class Form1
     Friend WithEvents btnGuardarMySQL As Button
     Friend WithEvents btnBuscar As Button
     Friend WithEvents cmbComuna As ComboBox
+    Friend WithEvents btnEliminar As Button
+    Friend WithEvents btnActualizar As Button
+    Friend WithEvents btnVerDatos As Button
 
 End Class
