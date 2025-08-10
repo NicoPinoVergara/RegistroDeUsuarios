@@ -28,7 +28,7 @@ Public Class Form1
 
     Private Sub btnGuardarMySQL_Click(sender As Object, e As EventArgs) Handles btnGuardarMySQL.Click
         If ValidarCampos() Then
-            Dim sexo As String = If(RadioButton1.Checked, "Masculino", If(RadioButton2.Checked, "Femenino", "No especifica"))
+            Dim sexo As String = If(rbHombre.Checked, "Masculino", If(rbMujer.Checked, "Femenino", "No especifica"))
             Dim command As MySqlCommand = New MySqlCommand("INSERT INTO Personas (RUT, Nombre, Apellido, Sexo, Comuna, Ciudad, Observacion) VALUES (@RUT, @Nombre, @Apellido, @Sexo, @Comuna, @Ciudad, @Observacion)", connection)
 
             command.Parameters.AddWithValue("@RUT", tbxRut.Text)
@@ -64,11 +64,11 @@ Public Class Form1
                 tbxNombres.Text = reader("Nombre").ToString()
                 tbxApellidos.Text = reader("Apellido").ToString()
                 If reader("Sexo").ToString() = "Masculino" Then
-                    RadioButton1.Checked = True
+                    rbHombre.Checked = True
                 ElseIf reader("Sexo").ToString() = "Femenino" Then
-                    RadioButton2.Checked = True
+                    rbMujer.Checked = True
                 Else
-                    RadioButton3.Checked = True
+                    rbNoEspecifica.Checked = True
                 End If
                 cmbComuna.SelectedItem = reader("Comuna").ToString()
                 tbxCiudad.Text = reader("Ciudad").ToString()
@@ -89,7 +89,7 @@ Public Class Form1
 
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
         If ValidarCampos() Then
-            Dim sexo As String = If(RadioButton1.Checked, "Masculino", If(RadioButton2.Checked, "Femenino", "No especifica"))
+            Dim sexo As String = If(rbHombre.Checked, "Masculino", If(rbMujer.Checked, "Femenino", "No especifica"))
             Dim command As MySqlCommand = New MySqlCommand("UPDATE Personas SET Nombre = @Nombre, Apellido = @Apellido, Sexo = @Sexo, Comuna = @Comuna, Ciudad = @Ciudad, Observacion = @Observacion WHERE RUT = @RUT", connection)
 
             command.Parameters.AddWithValue("@RUT", tbxRut.Text)
@@ -175,12 +175,24 @@ Public Class Form1
         tbxRut.Clear()
         tbxNombres.Clear()
         tbxApellidos.Clear()
-        RadioButton1.Checked = False
-        RadioButton2.Checked = False
-        RadioButton3.Checked = False
+        rbHombre.Checked = False
+        rbMujer.Checked = False
+        rbNoEspecifica.Checked = False
         cmbComuna.SelectedIndex = -1
         tbxCiudad.Clear()
         tbxObservacion.Clear()
         tbxRut.Focus()
+    End Sub
+
+    Private Sub cmbComuna_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbComuna.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
+    End Sub
+
+    Private Sub rbHombre_CheckedChanged(sender As Object, e As EventArgs) Handles rbHombre.CheckedChanged
+
     End Sub
 End Class

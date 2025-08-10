@@ -3,7 +3,8 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net8.0-windows</TargetFramework>
-    <RootNamespace>Eva2_Proyecto_NET</RootNamespace>
+    <AssemblyName>RegistroDeUsuarios</AssemblyName>
+    <RootNamespace>RegistroDeUsuarios</RootNamespace>
     <StartupObject>Sub Main</StartupObject>
     <UseWindowsForms>true</UseWindowsForms>
     <MyType>WindowsForms</MyType>
